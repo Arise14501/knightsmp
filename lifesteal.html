@@ -1,95 +1,71 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Lifesteal Leaderboard</title>
+<title>Duels</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.png">
+
 <style>
-body{
-  margin:0;
-  font-family:Arial;
-  color:#fff;
-  background:url('bg.gif') center/cover fixed;
-}
-body::before{
-  content:"";
-  position:fixed;
-  inset:0;
-  background:rgba(10,0,30,.7);
-}
+body{margin:0;font-family:Arial;color:white;text-align:center;background:url('bg.gif') center/cover fixed;}
+body::before{content:"";position:fixed;inset:0;background:rgba(10,0,20,.7);pointer-events:none;}
+.content{position:relative;z-index:1;}
 
-.navbar{
-  display:flex;
-  justify-content:space-between;
-  padding:15px;
-  background:rgba(0,0,0,.7);
-}
+.navbar{display:flex;justify-content:space-between;padding:12px 20px;background:black;}
+.logo{height:40px;}
 
-.menu-icon{
-  font-size:25px;
-  cursor:pointer;
-}
+.menu-icon{cursor:pointer;font-size:26px;}
 
 .mobile-menu{
-  position:fixed;
-  top:0;
-  right:-100%;
-  width:250px;
-  height:100%;
-  background:black;
-  padding:20px;
-  transition:.4s;
+display:none;
+position:absolute;
+right:10px;
+top:60px;
+background:black;
+padding:10px;
+border-radius:10px;
+flex-direction:column;
 }
 
-.mobile-menu a{
-  display:block;
-  margin:15px 0;
-  color:white;
-}
-
-.active{ right:0 }
-
-h1{text-align:center;text-shadow:0 0 15px violet;}
+.mobile-menu a{margin:5px 0;color:white;}
 
 .box{
-  margin:30px auto;
-  width:90%;
-  background:rgba(0,0,0,.6);
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 0 15px violet;
+margin:40px auto;
+width:80%;
+padding:20px;
+background:rgba(0,0,0,.6);
+border-radius:10px;
 }
 </style>
 </head>
 
 <body>
+<div class="content">
 
 <div class="navbar">
-  <div>🩸 Knight SMP</div>
-  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+<img src="logo.png" class="logo">
+<div class="menu-icon" onclick="toggleMenu()">☰</div>
 </div>
 
 <div class="mobile-menu" id="menu">
-  <a href="index.html">Home</a>
-  <a href="store.html">Store</a>
-  <a href="leaderboard.html">Leaderboard</a>
-  <a href="rules.html">Rules</a>
+<a href="leaderboard.html">⬅ Back</a>
 </div>
 
-<h1>🩸 Lifesteal Stats</h1>
+<h1>⚔️ Duels</h1>
 
 <div class="box">
-<p>Most Money: -</p>
-<p>Most Hearts: -</p>
-<p>Most Deaths: -</p>
-<p>Achievements: -</p>
 <p>Most Kills: -</p>
+<p>Most Deaths: -</p>
 <p>Playtime: -</p>
-<p>Coins: -</p>
+<p>Streaks: -</p>
+<p>Current Streak: -</p>
+</div>
+
 </div>
 
 <script>
 function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
+let m=document.getElementById("menu");
+m.style.display=(m.style.display==="flex")?"none":"flex";
 }
 </script>
 
