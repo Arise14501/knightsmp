@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight SMP Rules</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box}
+
+/* BACKGROUND */
+body{
+  margin:0;
+  font-family:Arial;
+  color:#fff;
+  text-align:center;
+  background:url('bg.gif') no-repeat center center fixed;
+  background-size:cover;
+}
+
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(10,0,20,0.75);
+  pointer-events:none;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  background:rgba(0,0,0,0.8);
+  padding:12px 20px;
+  backdrop-filter:blur(10px);
+  box-shadow:0 0 15px purple;
+}
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo{height:40px}
+
+.site-name{
+  color:violet;
+  font-weight:bold;
+  text-shadow:0 0 10px violet;
+}
+
+/* NAV BUTTONS */
+.nav-links{
+  display:flex;
+  gap:10px;
+}
+
+.nav-btn{
+  padding:8px 16px;
+  border-radius:8px;
+  text-decoration:none;
+  color:white;
+  font-weight:bold;
+  background:rgba(255,255,255,0.05);
+  transition:0.3s;
+}
+
+.nav-btn:hover{
+  background:linear-gradient(45deg,#6a00ff,#b300ff);
+  box-shadow:0 0 15px violet;
+  transform:translateY(-2px);
+}
+
+/* MOBILE MENU */
+.menu-icon{
+  display:none;
+  font-size:26px;
+  cursor:pointer;
+}
+
+.mobile-menu{
+  display:none;
+  position:absolute;
+  right:10px;
+  top:60px;
+  background:rgba(0,0,0,0.95);
+  padding:10px;
+  border-radius:10px;
+  flex-direction:column;
+  box-shadow:0 0 25px purple;
+  animation:fadeIn 0.3s ease;
+}
+
+.mobile-menu a{
+  margin:6px 0;
+  color:white;
+  text-decoration:none;
+}
+
+@media(max-width:768px){
+  .nav-links{display:none}
+  .menu-icon{display:block}
+}
+
+/* TITLE */
+h1{
+  margin-top:20px;
+  color:violet;
+  text-shadow:0 0 15px violet;
+  animation:fadeIn 1s ease;
+}
+
+/* RULE BOX */
+.box{
+  background:rgba(0,0,0,0.7);
+  margin:30px auto;
+  padding:25px;
+  width:85%;
+  border-radius:12px;
+  text-align:left;
+  box-shadow:0 0 20px purple;
+  transition:0.3s;
+  animation:fadeUp 0.6s ease;
+}
+
+.box:hover{
+  transform:translateY(-5px);
+  box-shadow:0 0 35px violet;
+}
+
+li{
+  margin:12px 0;
+  font-size:16px;
+}
+
+/* WARNING */
+.warning{
+  margin-top:20px;
+  text-align:center;
+  color:orange;
+  font-weight:bold;
+  animation:pulse 2s infinite;
+}
+
+/* ANIMATIONS */
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(40px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes pulse{
+  0%{text-shadow:0 0 5px orange}
+  50%{text-shadow:0 0 20px orange}
+  100%{text-shadow:0 0 5px orange}
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar">
+
+  <div class="logo-area">
+    <img src="logo.png" class="logo">
+    <span class="site-name">Knight SMP</span>
+  </div>
+
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links">
+    <a href="index.html" class="nav-btn">Home</a>
+    <a href="store.html" class="nav-btn">Store</a>
+    <a href="leaderboard.html" class="nav-btn">Leaderboard</a>
+    <a href="rules.html" class="nav-btn">Rules</a>
+  </div>
+
+  <div class="mobile-menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="store.html">Store</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="rules.html">Rules</a>
+  </div>
+
+</nav>
+
+<h1>📜 Knight SMP Rules</h1>
+
+<div class="box">
+
+<ol>
+
+<li><strong>🤝 Respect Everyone</strong><br>
+No hate, harassment, or toxic behavior.</li>
+
+<li><strong>💬 Keep Chat Friendly</strong><br>
+No spamming, flooding, or unnecessary messages.</li>
+
+<li><strong>📢 No Advertising</strong><br>
+Do not promote servers or links without permission.</li>
+
+<li><strong>📌 Use Correct Channels</strong><br>
+Follow proper channels for discussions.</li>
+
+<li><strong>🔞 No NSFW Content</strong><br>
+No inappropriate or adult content allowed.</li>
+
+<li><strong>⚠️ No Scams or Exploits</strong><br>
+No phishing, fake links, bugs, or glitches abuse.</li>
+
+<li><strong>⛏️ Fair Gameplay Only</strong><br>
+No hacks, cheats, or unfair mods.</li>
+
+<li><strong>🛡️ Follow Staff</strong><br>
+Respect staff decisions at all times.</li>
+
+</ol>
+
+<div class="warning">
+🔨 Breaking rules may lead to mute or ban. 🎮
+</div>
+
+</div>
+
+<script>
+function toggleMenu(){
+  let m=document.getElementById("menu");
+  m.style.display = (m.style.display==="flex")?"none":"flex";
+}
+</script>
+
+</body>
+</html>

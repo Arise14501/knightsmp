@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Knight SMP - Duels</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+*{box-sizing:border-box}
+
+/* BACKGROUND */
+body{
+  margin:0;
+  font-family:Arial;
+  color:#fff;
+  text-align:center;
+  background:url('bg.gif) no-repeat center center fixed;
+  background-size:cover;
+}
+
+body{
+  margin:0;
+  font-family:Arial;
+  background:#0a0015;
+  color:white;
+}
+
+/* NAVBAR */
+.navbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 20px;
+  background:black;
+  position:relative;
+}
+
+.logo-area{display:flex;align-items:center;gap:10px}
+.logo{height:40px}
+.site-name{color:violet;font-weight:bold}
+
+.nav-links{display:flex;gap:10px}
+.nav-btn{color:white;text-decoration:none;padding:6px 10px}
+
+/* HAMBURGER */
+.menu-icon{display:none;font-size:26px;cursor:pointer}
+
+/* POPUP */
+.mobile-menu{
+  display:none;
+  position:absolute;
+  right:10px;
+  top:60px;
+  background:#111;
+  padding:10px;
+  border-radius:10px;
+  flex-direction:column;
+  animation:pop 0.25s ease;
+}
+
+.mobile-menu a{
+  color:white;
+  padding:8px;
+  text-decoration:none;
+}
+
+/* TITLE */
+h1{
+  text-align:center;
+  color:cyan;
+  margin-top:20px;
+  animation:fadeDown 0.5s ease;
+}
+
+/* CONTAINER */
+.container{
+  width:90%;
+  margin:auto;
+  margin-top:20px;
+  background:rgba(255,255,255,0.05);
+  padding:20px;
+  border-radius:10px;
+  animation:fadeUp 0.5s ease;
+}
+
+/* ITEM */
+.item{
+  display:flex;
+  justify-content:space-between;
+  padding:10px;
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  transition:0.2s;
+}
+
+.item:hover{
+  background:rgba(255,255,255,0.08);
+  transform:translateX(5px);
+}
+
+/* ANIM */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes fadeDown{
+  from{opacity:0;transform:translateY(-20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+@keyframes pop{
+  from{opacity:0;transform:scale(0.9)}
+  to{opacity:1;transform:scale(1)}
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .nav-links{display:none}
+  .menu-icon{display:block}
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+
+  <div class="logo-area">
+    <img src="logo.png" class="logo">
+    <div class="site-name">Knight SMP</div>
+  </div>
+
+  <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links">
+    <a class="nav-btn" href="leaderboard.html">Back</a>
+    <a class="nav-btn" href="lifesteal.html">Lifesteal</a>
+  </div>
+
+  <div class="mobile-menu" id="menu">
+    <a href="leaderboard.html">Back</a>
+    <a href="lifesteal.html">Lifesteal</a>
+  </div>
+
+</div>
+
+<h1>🔵 Duels Leaderboard</h1>
+
+<div class="container">
+
+<div class="item"><span>Most Kills</span><span>--</span></div>
+<div class="item"><span>Most Deaths</span><span>--</span></div>
+<div class="item"><span>Playtime</span><span>--</span></div>
+<div class="item"><span>Streaks</span><span>--</span></div>
+<div class="item"><span>Current Streak</span><span>--</span></div>
+
+</div>
+
+<script>
+function toggleMenu(){
+  let m=document.getElementById("menu");
+  m.style.display = (m.style.display==="flex")?"none":"flex";
+}
+</script>
+
+</body>
+</html>

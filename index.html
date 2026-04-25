@@ -1,0 +1,155 @@
+<!DOCTYPE html>  <html>  
+<head>  
+  <title>Knight SMP</title>  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!--FAVICON-->    <link rel="icon" type="image/png" href="favicon.png">    <style>  
+    * { box-sizing: border-box; }  
+  
+    body {  
+      margin: 0;  
+      font-family: Arial, sans-serif;  
+      color: white;  
+      text-align: center;  
+      background: url('bg.gif') no-repeat center center fixed;  
+      background-size: cover;  
+    }  
+  
+    /* SAFE OVERLAY */  
+    body::before {  
+      content: "";  
+      position: fixed;  
+      inset: 0;  
+      background: rgba(10,0,20,0.7);  
+      pointer-events: none;  
+      z-index: 0;  
+    }  
+  
+    .content {  
+      position: relative;  
+      z-index: 1;  
+    }  
+  
+    /* NAVBAR */  
+    .navbar {  
+      display: flex;  
+      justify-content: space-between;  
+      align-items: center;  
+      background: rgba(0,0,0,0.85);  
+      padding: 12px 20px;  
+    }  
+  
+    .logo-area {  
+      display: flex;  
+      align-items: center;  
+      gap: 10px;  
+    }  
+  
+    .logo {  
+      height: 40px;  
+    }  
+  
+    .site-name {  
+      color: violet;  
+      font-weight: bold;  
+    }  
+  
+    /* NAV LINKS */  
+    .nav-links {  
+      display: flex;  
+      gap: 10px;  
+    }  
+  
+    .nav-links a {  
+      padding: 8px 14px;  
+      border-radius: 8px;  
+      text-decoration: none;  
+      color: white;  
+      font-weight: bold;  
+      background: rgba(255,255,255,0.05);  
+    }  
+  
+    .nav-links a:hover {  
+      background: violet;  
+      color: black;  
+    }  
+  
+    /* MOBILE */  
+    .menu-icon {  
+      display: none;  
+      font-size: 26px;  
+      cursor: pointer;  
+    }  
+  
+    .mobile-menu {  
+      display: none;  
+      position: absolute;  
+      right: 10px;  
+      top: 60px;  
+      background: rgba(0,0,0,0.95);  
+      padding: 10px;  
+      border-radius: 10px;  
+      flex-direction: column;  
+    }  
+  
+    .mobile-menu a {  
+      margin: 5px 0;  
+      color: white;  
+      text-decoration: none;  
+    }  
+  
+    @media(max-width: 768px){  
+      .nav-links { display: none; }  
+      .menu-icon { display: block; }  
+    }  
+  
+    /* HERO */  
+    .hero {  
+      padding: 120px 20px;  
+    }  
+  
+    .hero h1 {  
+      font-size: 38px;  
+      color: violet;  
+    }  
+  
+    button {  
+      padding: 12px 20px;  
+      border: none;  
+      border-radius: 8px;  
+      background: violet;  
+      cursor: pointer;  
+      font-weight: bold;  
+    }  
+  
+  </style>  </head>  <body>  <div class="content">    <div class="navbar">  
+    <div class="logo-area">  
+      <img src="logo.png" class="logo">  
+      <span class="site-name">Knight SMP</span>  
+    </div>  <div class="menu-icon" onclick="toggleMenu()">☰</div>  
+
+<div class="nav-links">  
+  <a href="index.html">Home</a>  
+  <a href="store.html">Store</a>  
+  <a href="leaderboard.html">Leaderboard</a>  
+  <a href="rules.html">Rules</a>  
+</div>
+
+  </div>    <!-- MOBILE MENU -->    <div class="mobile-menu" id="menu">  
+    <a href="index.html">Home</a>  
+    <a href="store.html">Store</a>  
+    <a href="leaderboard.html">Leaderboard</a>  
+    <a href="rules.html">Rules</a>  
+  </div>    <div class="hero">  
+    <h1>⚔️ Knight SMP</h1>  
+    <button onclick="copyIP()">JOIN SERVER</button>  
+  </div>  </div>  <script>  
+function toggleMenu() {  
+  let menu = document.getElementById("menu");  
+  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";  
+}  
+  
+function copyIP() {  
+  navigator.clipboard.writeText("SOON");  
+  alert("IP Copied!");  
+}  
+</script>  </body>  
+</hgif
