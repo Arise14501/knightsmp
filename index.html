@@ -1,168 +1,225 @@
-<!DOCTYPE html>  <html>  
-<head>  
-  <title>Knight SMP</title>  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">    <!--FAVICON-->    <link rel="icon" type="image/png" href="favicon.png">    <style>  
-    * { box-sizing: border-box; }  
-  <meta name="KnightSMP is a competitive Minecraft server built for players who love survival with a twist. Featuring intense Lifesteal mechanics and fast-paced Duels, every fight matters and every decision counts. Earn hearts, climb leaderboards, and prove your dominance against other players. With a balanced economy, engaging events, and an active community, KnightSMP delivers a smooth and exciting gameplay experience for both casual and hardcore players." content="KnightSMP - Best Minecraft Lifesteal & Duels server. Join now and become a legend.">
-<meta name="KnightSMP" content="KnightSMP, Minecraft SMP, Lifesteal server, Duels server, Minecraft India">
-<meta name="Sasuke_plays" content="KnightSMP">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>KnightSMP | Lifesteal & Duels Server</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta property="og:title" content="KnightSMP Official Website">
-<meta property="og:description" content="Join KnightSMP - Lifesteal & Duels server">
-<meta property="og:image" content="logo.png">
-<meta property="og:url" content="https://knightsmp.vercel.app">
-     <!--LINK PREVIEW-->  <meta property="og:title" content="KnightSMP Official Server">  
-<meta property="og:description" content="Join KnightSMP - Lifesteal & Duels Minecraft Server">  
-<meta property="og:image" content="https://knightsmp.vercel.app/banner.png">  
-<meta property="og:url" content="https://knightsmp.vercel.app">  
-<meta property="og:type" content="website">  <!-- Discord specific -->  <meta name="theme-color" content="#8a2be2">
-   
-    body {  
-      margin: 0;  
-      font-family: Arial, sans-serif;  
-      color: white;  
-      text-align: center;  
-      background: url('bg.gif') no-repeat center center fixed;  
-      background-size: cover;  
-    }  
-  
-    /* SAFE OVERLAY */  
-    body::before {  
-      content: "";  
-      position: fixed;  
-      inset: 0;  
-      background: rgba(10,0,20,0.7);  
-      pointer-events: none;  
-      z-index: 0;  
-    }  
-  
-    .content {  
-      position: relative;  
-      z-index: 1;  
-    }  
-  
-    /* NAVBAR */  
-    .navbar {  
-      display: flex;  
-      justify-content: space-between;  
-      align-items: center;  
-      background: rgba(0,0,0,0.85);  
-      padding: 12px 20px;  
-    }  
-  
-    .logo-area {  
-      display: flex;  
-      align-items: center;  
-      gap: 10px;  
-    }  
-  
-    .logo {  
-      height: 40px;  
-    }  
-  
-    .site-name {  
-      color: violet;  
-      font-weight: bold;  
-    }  
-  
-    /* NAV LINKS */  
-    .nav-links {  
-      display: flex;  
-      gap: 10px;  
-    }  
-  
-    .nav-links a {  
-      padding: 8px 14px;  
-      border-radius: 8px;  
-      text-decoration: none;  
-      color: white;  
-      font-weight: bold;  
-      background: rgba(255,255,255,0.05);  
-    }  
-  
-    .nav-links a:hover {  
-      background: violet;  
-      color: black;  
-    }  
-  
-    /* MOBILE */  
-    .menu-icon {  
-      display: none;  
-      font-size: 26px;  
-      cursor: pointer;  
-    }  
-  
-    .mobile-menu {  
-      display: none;  
-      position: absolute;  
-      right: 10px;  
-      top: 60px;  
-      background: rgba(0,0,0,0.95);  
-      padding: 10px;  
-      border-radius: 10px;  
-      flex-direction: column;  
-    }  
-  
-    .mobile-menu a {  
-      margin: 5px 0;  
-      color: white;  
-      text-decoration: none;  
-    }  
-  
-    @media(max-width: 768px){  
-      .nav-links { display: none; }  
-      .menu-icon { display: block; }  
-    }  
-  
-    /* HERO */  
-    .hero {  
-      padding: 120px 20px;  
-    }  
-  
-    .hero h1 {  
-      font-size: 38px;  
-      color: violet;  
-    }  
-  
-    button {  
-      padding: 12px 20px;  
-      border: none;  
-      border-radius: 8px;  
-      background: violet;  
-      cursor: pointer;  
-      font-weight: bold;  
-    }  
-  
-  </style>  </head>  <body>  <div class="content">    <div class="navbar">  
-    <div class="logo-area">  
-      <img src="logo.png" class="logo">  
-      <span class="site-name">Knight SMP</span>  
-    </div>  <div class="menu-icon" onclick="toggleMenu()">☰</div>  
+  <!-- SEO -->
+  <meta name="description" content="KnightSMP - Best Minecraft Lifesteal & Duels Server. Join now and become a legend.">
+  <meta name="keywords" content="KnightSMP, Minecraft SMP, Lifesteal, Duels, Minecraft Server">
+  <meta name="author" content="KnightSMP">
 
-<div class="nav-links">  
-  <a href="index.html">Home</a>  
-  <a href="store.html">Store</a>  
-  <a href="leaderboard.html">Leaderboard</a>  
-  <a href="rules.html">Rules</a>  
+  <!-- LINK PREVIEW -->
+  <meta property="og:title" content="KnightSMP Official Server">
+  <meta property="og:description" content="Join KnightSMP - Lifesteal & Duels Minecraft Server">
+  <meta property="og:image" content="https://knightsmp.vercel.app/banner.png">
+  <meta property="og:url" content="https://knightsmp.vercel.app">
+  <meta property="og:type" content="website">
+  <meta name="theme-color" content="#8a2be2">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="favicon.png">
+
+  <style>
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial;
+      color: white;
+      text-align: center;
+      background: url('bg.gif') center/cover fixed;
+    }
+
+    /* Overlay fix */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(10,0,20,.7);
+      pointer-events: none;
+    }
+
+    .content { position: relative; z-index: 1; }
+
+    /* NAVBAR */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(0,0,0,.85);
+      padding: 12px 20px;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo {
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px violet;
+    }
+
+    .site-name {
+      color: violet;
+      font-weight: bold;
+      text-shadow: 0 0 10px violet;
+    }
+
+    /* NAV LINKS */
+    .nav-links {
+      display: flex;
+      gap: 10px;
+    }
+
+    .nav-links a {
+      padding: 8px 14px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      background: rgba(255,255,255,.05);
+      transition: .3s;
+    }
+
+    .nav-links a:hover {
+      background: violet;
+      color: black;
+      box-shadow: 0 0 10px violet;
+    }
+
+    /* MOBILE MENU */
+    .menu-icon {
+      display: none;
+      font-size: 26px;
+      cursor: pointer;
+    }
+
+    .mobile-menu {
+      display: none;
+      position: absolute;
+      right: 10px;
+      top: 60px;
+      background: rgba(0,0,0,.95);
+      padding: 10px;
+      border-radius: 10px;
+      flex-direction: column;
+    }
+
+    .mobile-menu a {
+      margin: 5px 0;
+      color: white;
+      text-decoration: none;
+      padding: 8px;
+      border-radius: 6px;
+    }
+
+    .mobile-menu a:hover {
+      background: violet;
+      color: black;
+    }
+
+    @media(max-width:768px){
+      .nav-links { display: none; }
+      .menu-icon { display: block; }
+    }
+
+    /* HERO */
+    .hero {
+      padding: 120px 20px;
+      animation: fadeIn 1s ease;
+    }
+
+    .hero h1 {
+      font-size: 40px;
+      color: violet;
+      text-shadow: 0 0 20px violet;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin: auto;
+      margin-bottom: 20px;
+    }
+
+    /* BUTTON */
+    button {
+      padding: 12px 22px;
+      border: none;
+      border-radius: 8px;
+      background: linear-gradient(45deg, purple, violet);
+      color: white;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 0 15px violet;
+      transition: .3s;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 25px violet;
+    }
+
+    /* ANIMATION */
+    @keyframes fadeIn {
+      from { opacity:0; transform: translateY(-20px); }
+      to { opacity:1; transform: translateY(0); }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<div class="content">
+
+  <div class="navbar">
+    <div class="logo-area">
+      <img src="logo.png" class="logo">
+      <span class="site-name">Knight SMP</span>
+    </div>
+
+    <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="store.html">Store</a>
+      <a href="leaderboard.html">Leaderboard</a>
+      <a href="rules.html">Rules</a>
+    </div>
+  </div>
+
+  <div class="mobile-menu" id="menu">
+    <a href="index.html">Home</a>
+    <a href="store.html">Store</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="rules.html">Rules</a>
+  </div>
+
+  <div class="hero">
+    <h1>⚔️ Knight SMP</h1>
+    <p>Join the ultimate Lifesteal & Duels experience. Fight, survive, and dominate the leaderboard.</p>
+
+    <button onclick="copyIP()">JOIN SERVER</button>
+  </div>
+
 </div>
 
-  </div>    <!-- MOBILE MENU -->    <div class="mobile-menu" id="menu">  
-    <a href="index.html">Home</a>  
-    <a href="store.html">Store</a>  
-    <a href="leaderboard.html">Leaderboard</a>  
-    <a href="rules.html">Rules</a>  
-  </div>    <div class="hero">  
-    <h1>⚔️ Knight SMP</h1>  
-    <button onclick="copyIP()">JOIN SERVER</button>  
-  </div>  </div>  <script>  
-function toggleMenu() {  
-  let menu = document.getElementById("menu");  
-  menu.style.display = (menu.style.display === "flex") ? "none" : "flex";  
-}  
-  
-function copyIP() {  
-  navigator.clipboard.writeText("SOON");  
-  alert("IP Copied!");  
-}  
-</script>  </body>  
-</hgif
+<script>
+function toggleMenu(){
+  let m=document.getElementById("menu");
+  m.style.display=(m.style.display==="flex")?"none":"flex";
+}
+
+function copyIP(){
+  navigator.clipboard.writeText("SOON");
+  alert("IP Copied!");
+}
+</script>
+
+</body>
+</html>
