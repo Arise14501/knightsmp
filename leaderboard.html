@@ -1,24 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Leaderboard</title>
+<title>Lifesteal Leaderboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
-
 body{
   margin:0;
   font-family:Arial;
-  color:white;
-  text-align:center;
+  color:#fff;
   background:url('bg.gif') center/cover fixed;
 }
-
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:rgba(0,0,30,.7);
-  pointer-events:none; /* 🔥 FIX */
+  background:rgba(10,0,30,.7);
 }
 
 .navbar{
@@ -26,13 +22,11 @@ body::before{
   justify-content:space-between;
   padding:15px;
   background:rgba(0,0,0,.7);
-  position:relative;
-  z-index:2;
 }
 
 .menu-icon{
-  cursor:pointer;
   font-size:25px;
+  cursor:pointer;
 }
 
 .mobile-menu{
@@ -44,7 +38,6 @@ body::before{
   background:black;
   padding:20px;
   transition:.4s;
-  z-index:3;
 }
 
 .mobile-menu a{
@@ -55,37 +48,23 @@ body::before{
 
 .active{ right:0 }
 
-h1{
-  text-shadow:0 0 15px violet;
-  position:relative;
-  z-index:2;
-}
+h1{text-align:center;text-shadow:0 0 15px violet;}
 
-.card{
-  margin:40px auto;
-  width:80%;
-  padding:30px;
+.box{
+  margin:30px auto;
+  width:90%;
   background:rgba(0,0,0,.6);
+  padding:20px;
   border-radius:12px;
-  box-shadow:0 0 20px violet;
-  cursor:pointer;
-  transition:.3s;
-  position:relative;
-  z-index:2;
+  box-shadow:0 0 15px violet;
 }
-
-.card:hover{
-  transform:scale(1.05);
-  box-shadow:0 0 30px violet;
-}
-
 </style>
 </head>
 
 <body>
 
 <div class="navbar">
-  <div>🏆 Knight SMP</div>
+  <div>🩸 Knight SMP</div>
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
 </div>
 
@@ -96,14 +75,16 @@ h1{
   <a href="rules.html">Rules</a>
 </div>
 
-<h1>🏆 Leaderboards</h1>
+<h1>🩸 Lifesteal Stats</h1>
 
-<div class="card" onclick="window.location.href='lifesteal.html'">
-  🩸 Lifesteal Leaderboard
-</div>
-
-<div class="card" onclick="window.location.href='duels.html'">
-  ⚔️ Duels Leaderboard
+<div class="box">
+<p>Most Money: -</p>
+<p>Most Hearts: -</p>
+<p>Most Deaths: -</p>
+<p>Achievements: -</p>
+<p>Most Kills: -</p>
+<p>Playtime: -</p>
+<p>Coins: -</p>
 </div>
 
 <script>
