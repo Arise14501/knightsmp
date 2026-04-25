@@ -1,177 +1,95 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Knight SMP - Lifesteal</title>
+<title>Lifesteal Leaderboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-*{box-sizing:border-box}
-
-/* BACKGROUND */
 body{
   margin:0;
   font-family:Arial;
   color:#fff;
-  text-align:center;
-  background:url('bg.gif') no-repeat center center fixed;
-  background-size:cover;
+  background:url('bg.gif') center/cover fixed;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(10,0,30,.7);
 }
 
-body{
-  margin:0;
-  font-family:Arial;
-  background:#0a0015;
-  color:white;
-}
-
-/* NAVBAR */
 .navbar{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  padding:12px 20px;
-  background:black;
-  position:relative;
+  padding:15px;
+  background:rgba(0,0,0,.7);
 }
 
-.logo-area{display:flex;align-items:center;gap:10px}
-.logo{height:40px}
-.site-name{color:violet;font-weight:bold}
-
-/* LINKS */
-.nav-links{display:flex;gap:10px}
-
-.nav-btn{
-  color:white;
-  text-decoration:none;
-  padding:6px 10px;
-}
-
-/* HAMBURGER */
 .menu-icon{
-  display:none;
-  font-size:26px;
+  font-size:25px;
   cursor:pointer;
 }
 
-/* POPUP MENU */
 .mobile-menu{
-  display:none;
-  position:absolute;
-  right:10px;
-  top:60px;
-  background:#111;
-  padding:10px;
-  border-radius:10px;
-  flex-direction:column;
-  animation:pop 0.25s ease;
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:250px;
+  height:100%;
+  background:black;
+  padding:20px;
+  transition:.4s;
 }
 
 .mobile-menu a{
+  display:block;
+  margin:15px 0;
   color:white;
-  padding:8px;
-  text-decoration:none;
 }
 
-/* TITLE */
-h1{
-  text-align:center;
-  color:red;
-  margin-top:20px;
-  animation:fadeDown 0.5s ease;
-}
+.active{ right:0 }
 
-/* CONTAINER */
-.container{
+h1{text-align:center;text-shadow:0 0 15px violet;}
+
+.box{
+  margin:30px auto;
   width:90%;
-  margin:auto;
-  margin-top:20px;
-  background:rgba(255,255,255,0.05);
+  background:rgba(0,0,0,.6);
   padding:20px;
-  border-radius:10px;
-  animation:fadeUp 0.5s ease;
-}
-
-/* ITEMS */
-.item{
-  display:flex;
-  justify-content:space-between;
-  padding:10px;
-  border-bottom:1px solid rgba(255,255,255,0.1);
-  transition:0.2s;
-}
-
-.item:hover{
-  background:rgba(255,255,255,0.08);
-  transform:translateX(5px);
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(30px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-20px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes pop{
-  from{opacity:0;transform:scale(0.9)}
-  to{opacity:1;transform:scale(1)}
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .nav-links{display:none}
-  .menu-icon{display:block}
+  border-radius:12px;
+  box-shadow:0 0 15px violet;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
-
-  <div class="logo-area">
-    <img src="logo.png" class="logo">
-    <div class="site-name">Knight SMP</div>
-  </div>
-
+  <div>🩸 Knight SMP</div>
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-  <div class="nav-links">
-    <a class="nav-btn" href="leaderboard.html">Back</a>
-    <a class="nav-btn" href="duels.html">Duels</a>
-  </div>
-
-  <div class="mobile-menu" id="menu">
-    <a href="leaderboard.html">Back</a>
-    <a href="duels.html">Duels</a>
-  </div>
-
 </div>
 
-<h1>🔴 Lifesteal Leaderboard</h1>
+<div class="mobile-menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="store.html">Store</a>
+  <a href="leaderboard.html">Leaderboard</a>
+  <a href="rules.html">Rules</a>
+</div>
 
-<div class="container">
+<h1>🩸 Lifesteal Stats</h1>
 
-<div class="item"><span>Most Money</span><span>--</span></div>
-<div class="item"><span>Most Hearts</span><span>--</span></div>
-<div class="item"><span>Most Deaths</span><span>--</span></div>
-<div class="item"><span>Achievements</span><span>--</span></div>
-<div class="item"><span>Most Kills</span><span>--</span></div>
-<div class="item"><span>Playtime</span><span>--</span></div>
-<div class="item"><span>Coins</span><span>--</span></div>
-
+<div class="box">
+<p>Most Money: -</p>
+<p>Most Hearts: -</p>
+<p>Most Deaths: -</p>
+<p>Achievements: -</p>
+<p>Most Kills: -</p>
+<p>Playtime: -</p>
+<p>Coins: -</p>
 </div>
 
 <script>
 function toggleMenu(){
-  let m=document.getElementById("menu");
-  m.style.display = (m.style.display==="flex")?"none":"flex";
+  document.getElementById("menu").classList.toggle("active");
 }
 </script>
 
