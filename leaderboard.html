@@ -1,71 +1,116 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Lifesteal Leaderboard</title>
+<title>Leaderboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" href="favicon.png">
+
 <style>
+*{box-sizing:border-box;}
+
 body{
   margin:0;
   font-family:Arial;
-  color:#fff;
+  color:white;
+  text-align:center;
   background:url('bg.gif') center/cover fixed;
 }
+
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:rgba(10,0,30,.7);
+  background:rgba(10,0,20,.7);
+  pointer-events:none;
 }
+
+.content{position:relative;z-index:1;}
 
 .navbar{
   display:flex;
   justify-content:space-between;
-  padding:15px;
-  background:rgba(0,0,0,.7);
+  align-items:center;
+  background:rgba(0,0,0,.85);
+  padding:12px 20px;
 }
 
-.menu-icon{
-  font-size:25px;
+.logo-area{display:flex;align-items:center;gap:10px;}
+
+.logo{height:40px;}
+
+.site-name{color:violet;font-weight:bold;}
+
+.nav-links{display:flex;gap:10px;}
+
+.nav-links a{
+  padding:8px 14px;
+  border-radius:8px;
+  text-decoration:none;
+  color:white;
+  background:rgba(255,255,255,.05);
+}
+
+.nav-links a:hover{
+  background:violet;
+  color:black;
+}
+
+.menu-icon{display:none;font-size:26px;cursor:pointer;}
+
+.mobile-menu{
+  display:none;
+  position:absolute;
+  right:10px;
+  top:60px;
+  background:black;
+  padding:10px;
+  border-radius:10px;
+  flex-direction:column;
+}
+
+.mobile-menu a{margin:5px 0;color:white;}
+
+@media(max-width:768px){
+  .nav-links{display:none;}
+  .menu-icon{display:block;}
+}
+
+/* CARDS */
+.card{
+  margin:40px auto;
+  width:80%;
+  padding:25px;
+  background:rgba(0,0,0,.6);
+  border-radius:12px;
+  box-shadow:0 0 15px violet;
   cursor:pointer;
 }
 
-.mobile-menu{
-  position:fixed;
-  top:0;
-  right:-100%;
-  width:250px;
-  height:100%;
-  background:black;
-  padding:20px;
-  transition:.4s;
+.card:hover{
+  background:violet;
+  color:black;
 }
 
-.mobile-menu a{
-  display:block;
-  margin:15px 0;
-  color:white;
-}
-
-.active{ right:0 }
-
-h1{text-align:center;text-shadow:0 0 15px violet;}
-
-.box{
-  margin:30px auto;
-  width:90%;
-  background:rgba(0,0,0,.6);
-  padding:20px;
-  border-radius:12px;
-  box-shadow:0 0 15px violet;
-}
 </style>
 </head>
 
 <body>
+<div class="content">
 
 <div class="navbar">
-  <div>🩸 Knight SMP</div>
+  <div class="logo-area">
+    <img src="logo.png" class="logo">
+    <span class="site-name">Knight SMP</span>
+  </div>
+
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
+
+  <div class="nav-links">
+    <a href="index.html">Home</a>
+    <a href="store.html">Store</a>
+    <a href="leaderboard.html">Leaderboard</a>
+    <a href="rules.html">Rules</a>
+  </div>
 </div>
 
 <div class="mobile-menu" id="menu">
@@ -75,21 +120,26 @@ h1{text-align:center;text-shadow:0 0 15px violet;}
   <a href="rules.html">Rules</a>
 </div>
 
-<h1>🩸 Lifesteal Stats</h1>
+<h1>🏆 Leaderboards</h1>
 
-<div class="box">
-<p>Most Money: -</p>
-<p>Most Hearts: -</p>
-<p>Most Deaths: -</p>
-<p>Achievements: -</p>
-<p>Most Kills: -</p>
-<p>Playtime: -</p>
-<p>Coins: -</p>
+<div class="card" onclick="go('lifesteal.html')">
+🩸 Lifesteal Leaderboard
+</div>
+
+<div class="card" onclick="go('duels.html')">
+⚔️ Duels Leaderboard
+</div>
+
 </div>
 
 <script>
 function toggleMenu(){
-  document.getElementById("menu").classList.toggle("active");
+  let m=document.getElementById("menu");
+  m.style.display=(m.style.display==="flex")?"none":"flex";
+}
+
+function go(p){
+  window.location.href=p;
 }
 </script>
 
