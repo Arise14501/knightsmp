@@ -1,238 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Knight SMP Leaderboard</title>
+<title>Leaderboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
-*{box-sizing:border-box}
-
 body{
   margin:0;
   font-family:Arial;
-  color:#fff;
+  color:white;
   text-align:center;
-  background:url('bg.gif') no-repeat center center fixed;
-  background-size:cover;
-  overflow-x:hidden;
+  background:url('bg.gif') center/cover fixed;
 }
-
-/* DARK OVERLAY */
 body::before{
   content:"";
   position:fixed;
   inset:0;
-  background:rgba(10,0,20,0.75);
-  pointer-events:none;
+  background:rgba(0,0,30,.7);
 }
 
-/* NAVBAR */
 .navbar{
   display:flex;
   justify-content:space-between;
-  align-items:center;
-  background:rgba(0,0,0,0.8);
-  padding:12px 20px;
-  backdrop-filter:blur(10px);
-  box-shadow:0 0 15px purple;
-  position:relative;
-  z-index:10;
+  padding:15px;
+  background:rgba(0,0,0,.7);
 }
 
-.logo-area{
-  display:flex;
-  align-items:center;
-  gap:10px;
-}
+.menu-icon{cursor:pointer;font-size:25px;}
 
-.logo{height:40px}
-
-.site-name{
-  color:violet;
-  font-weight:bold;
-  text-shadow:0 0 10px violet;
-}
-
-.nav-links{
-  display:flex;
-  gap:10px;
-}
-
-.nav-btn{
-  padding:8px 16px;
-  border-radius:8px;
-  text-decoration:none;
-  color:white;
-  font-weight:bold;
-  background:rgba(255,255,255,0.05);
-  transition:0.3s;
-}
-
-.nav-btn:hover{
-  background:linear-gradient(45deg,#6a00ff,#b300ff);
-  box-shadow:0 0 15px violet;
-}
-
-/* HAMBURGER */
-.menu-icon{
-  display:none;
-  font-size:26px;
-  cursor:pointer;
-}
-
-/* MOBILE MENU */
 .mobile-menu{
-  display:none;
-  position:absolute;
-  right:10px;
-  top:60px;
-  background:rgba(0,0,0,0.95);
-  padding:10px;
-  border-radius:10px;
-  flex-direction:column;
-  box-shadow:0 0 25px purple;
+  position:fixed;
+  top:0;
+  right:-100%;
+  width:250px;
+  height:100%;
+  background:black;
+  padding:20px;
+  transition:.4s;
 }
 
 .mobile-menu a{
+  display:block;
+  margin:15px 0;
   color:white;
-  text-decoration:none;
-  padding:8px;
 }
 
-/* TITLE */
-h1{
-  margin-top:30px;
-  color:violet;
-  text-shadow:0 0 15px violet;
-  animation:fadeDown 0.6s ease;
-}
+.active{ right:0 }
 
-/* BUTTONS */
-.container{
-  margin-top:60px;
-  display:flex;
-  justify-content:center;
-  gap:30px;
-  flex-wrap:wrap;
-  animation:fadeUp 0.6s ease;
-}
-
-.big-btn{
-  width:220px;
+.card{
+  margin:40px auto;
+  width:80%;
   padding:30px;
-  font-size:22px;
-  font-weight:bold;
-  border:none;
-  border-radius:15px;
+  background:rgba(0,0,0,.6);
+  border-radius:12px;
+  box-shadow:0 0 20px violet;
   cursor:pointer;
-  transition:0.25s ease;
-  color:white;
-  text-decoration:none;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:10px;
-  position:relative;
-  z-index:5;
+  transition:.3s;
 }
 
-/* CLICK FEEL */
-.big-btn:active{
-  transform:scale(0.92);
-}
-
-/* COLORS */
-.lifestea/* BACKGROUND */
-body{
-  margin:0;
-  font-family:Arial;
-  color:#fff;
-  text-align:center;
-  background:url('bg.mp4') no-repeat center center fixed;
-  background-size:cover;
-}l{
-  background:linear-gradient(45deg,#ff0000,#ff4d4d);
-}
-
-.duels{
-  background:linear-gradient(45deg,#0066ff,#00c3ff);
-}
-
-/* HOVER GLOW */
-.lifesteal:hover{
-  box-shadow:0 0 30px red;
-  transform:scale(1.08);
-}
-
-.duels:hover{
-  box-shadow:0 0 30px cyan;
-  transform:scale(1.08);
-}
-
-/* ANIMATIONS */
-@keyframes fadeUp{
-  from{opacity:0;transform:translateY(40px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-@keyframes fadeDown{
-  from{opacity:0;transform:translateY(-30px)}
-  to{opacity:1;transform:translateY(0)}
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .nav-links{display:none}
-  .menu-icon{display:block}
+.card:hover{
+  transform:scale(1.05);
+  box-shadow:0 0 30px violet;
 }
 </style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
 <div class="navbar">
-
-  <div class="logo-area">
-    <img src="logo.png" class="logo">
-    <span class="site-name">Knight SMP</span>
-  </div>
-
+  <div>🏆 Knight SMP</div>
   <div class="menu-icon" onclick="toggleMenu()">☰</div>
-
-  <div class="nav-links">
-    <a href="index.html" class="nav-btn">Home</a>
-    <a href="leaderboard.html" class="nav-btn">Leaderboard</a>
-    <a href="rules.html" class="nav-btn">Rules</a>
-  </div>
-
-  <div class="mobile-menu" id="menu">
-    <a href="index.html">Home</a>
-    <a href="lifesteal.html">Lifesteal</a>
-    <a href="duels.html">Duels</a>
-    <a href="rules.html">Rules</a>
-  </div>
-
 </div>
 
-<h1>🏆 Select Leaderboard</h1>
+<div class="mobile-menu" id="menu">
+  <a href="index.html">Home</a>
+  <a href="store.html">Store</a>
+  <a href="leaderboard.html">Leaderboard</a>
+  <a href="rules.html">Rules</a>
+</div>
 
-<div class="container">
+<h1>🏆 Leaderboards</h1>
 
-  <a href="lifesteal.html" class="big-btn lifesteal">
-    🔴 Lifesteal
-  </a>
+<div class="card" onclick="location.href='lifesteal.html'">
+  🩸 Lifesteal Leaderboard
+</div>
 
-  <a href="duels.html" class="big-btn duels">
-    🔵 Duels
-  </a>
-
+<div class="card" onclick="location.href='duels.html'">
+  ⚔️ Duels Leaderboard
 </div>
 
 <script>
 function toggleMenu(){
-  let m=document.getElementById("menu");
-  m.style.display = (m.style.display==="flex")?"none":"flex";
+  document.getElementById("menu").classList.toggle("active");
 }
 </script>
 
