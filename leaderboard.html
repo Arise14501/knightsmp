@@ -4,6 +4,7 @@
 <title>Leaderboard</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
+
 body{
   margin:0;
   font-family:Arial;
@@ -11,11 +12,13 @@ body{
   text-align:center;
   background:url('bg.gif') center/cover fixed;
 }
+
 body::before{
   content:"";
   position:fixed;
   inset:0;
   background:rgba(0,0,30,.7);
+  pointer-events:none; /* 🔥 FIX */
 }
 
 .navbar{
@@ -23,9 +26,14 @@ body::before{
   justify-content:space-between;
   padding:15px;
   background:rgba(0,0,0,.7);
+  position:relative;
+  z-index:2;
 }
 
-.menu-icon{cursor:pointer;font-size:25px;}
+.menu-icon{
+  cursor:pointer;
+  font-size:25px;
+}
 
 .mobile-menu{
   position:fixed;
@@ -36,6 +44,7 @@ body::before{
   background:black;
   padding:20px;
   transition:.4s;
+  z-index:3;
 }
 
 .mobile-menu a{
@@ -46,6 +55,12 @@ body::before{
 
 .active{ right:0 }
 
+h1{
+  text-shadow:0 0 15px violet;
+  position:relative;
+  z-index:2;
+}
+
 .card{
   margin:40px auto;
   width:80%;
@@ -55,12 +70,15 @@ body::before{
   box-shadow:0 0 20px violet;
   cursor:pointer;
   transition:.3s;
+  position:relative;
+  z-index:2;
 }
 
 .card:hover{
   transform:scale(1.05);
   box-shadow:0 0 30px violet;
 }
+
 </style>
 </head>
 
@@ -80,11 +98,11 @@ body::before{
 
 <h1>🏆 Leaderboards</h1>
 
-<div class="card" onclick="location.href='lifesteal.html'">
+<div class="card" onclick="window.location.href='lifesteal.html'">
   🩸 Lifesteal Leaderboard
 </div>
 
-<div class="card" onclick="location.href='duels.html'">
+<div class="card" onclick="window.location.href='duels.html'">
   ⚔️ Duels Leaderboard
 </div>
 
